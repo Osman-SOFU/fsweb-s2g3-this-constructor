@@ -14,8 +14,24 @@
         + Bu metotla, `isim` ve `yas`i içeren bir string döndürmelisin. (Örn: "Mary, 50")
 */
 
-function Kisi(/* kodlar buraya */) {
-  /* kodlar buraya */
+
+function Kisi(isim, yas) {
+  this.isim = isim;
+  this.yas = yas;
+  this.mide = [];
+  this.ye = function(birYemek) {
+    if(this.mide.length < 10){
+      this.mide.push(birYemek);
+    }
+  }
+  this.bosalt = function(birYemek){
+    if(this.mide.length = 10){
+      this.mide =[] ;
+    }
+  }
+  this.toString = function(){
+    return `${this.isim}, ${this.yas}`;
+  }
 }
 
 /*
@@ -34,9 +50,23 @@ function Kisi(/* kodlar buraya */) {
         +  "x kilometrede benzinim bitti!" x değişkeni `kilometreSaati`ndeki sayı olmalıdır.
 */
 
-function Araba(/* kodlar buraya */) {
-  /* kodlar buraya */
+function Araba(model, yakitTuketimi) {
+this.model = model;
+this.yakitTuketimi = yakitTuketimi;
+this.benzinDeposu = 0;
+this.kilometreSaati = 0;
+this.doldur = function(litre){
+  this.benzinDeposu += litre;
 }
+this.kullan = function(mesafe){
+  this.kilometreSaati += mesafe;
+  this.benzinDeposu - (mesafe/yakitTuketimi);
+  if(this.benzinDeposu  === 0){
+    return `${this.kilometreSaati} kilometrede benzinim bitti!`
+}  
+}
+}
+
 
 /*
   GÖREV 3
